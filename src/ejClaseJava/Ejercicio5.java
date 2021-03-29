@@ -65,4 +65,5 @@ public class Ejercicio5 {
 							+ e.getClass().getSimpleName() + "\n Sueldo: " + df.format(e.getSueldo()));
 		}
 	}
+	//En realidad es el ejercicio 6 porque use ArrayList
 }
