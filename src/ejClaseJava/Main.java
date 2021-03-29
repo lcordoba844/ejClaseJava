@@ -1,4 +1,4 @@
-package elBigProject;
+package ejClaseJava;
 
 import java.util.Scanner;
 

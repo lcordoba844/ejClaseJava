@@ -1,4 +1,4 @@
-package elBigProject;
+package ejClaseJava;
 
 public class Administrativo extends Empleado {
 
