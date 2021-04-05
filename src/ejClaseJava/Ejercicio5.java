@@ -21,33 +21,31 @@ public class Ejercicio5 {
 
 			if (tipoEmpleado.equalsIgnoreCase("a")) {
 				Administrativo a = new Administrativo();
-				String nombre = JOptionPane.showInputDialog("Ingrese nombre del vendedor: ");
-				String apellido = JOptionPane.showInputDialog("Ingrese apellido del vendedor: ");
-				String dni = JOptionPane.showInputDialog("Ingrese dni del vendedor: ");
-				String mail = JOptionPane.showInputDialog("Ingrese mail del vendedor: ");
-				double sueldoBase = Double
-						.parseDouble(JOptionPane.showInputDialog("Ingrese sueldo base del administrador: "));
-				double hsExtra = Double.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad de horas extra: "));
-				double hsMes = Double
-						.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad de horas trabajadas al Mes: "));
-				a.cargaAdmin(sueldoBase, nombre, apellido, dni, mail, hsExtra, hsMes);
+				a.setNombre(JOptionPane.showInputDialog("Ingrese nombre del administrador: "));
+				a.setApellido(JOptionPane.showInputDialog("Ingrese apellido del administrador: "));
+				a.setDni(JOptionPane.showInputDialog("Ingrese dni del administrador: "));
+				a.setMail(JOptionPane.showInputDialog("Ingrese mail del administrador: "));
+				a.setSueldo(Double.parseDouble(JOptionPane.showInputDialog("Ingrese sueldo base del administrador: ")));
+				
+				a.setHsExtra(Double.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad de horas extra: ")));
+				a.setHsMes(Double.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad de horas trabajadas al Mes: ")));
+				
 				empleados.add(a);
 
 			} else if (tipoEmpleado.equalsIgnoreCase("v")) {
 				Vendedor v = new Vendedor();
-				String nombre = JOptionPane.showInputDialog("Ingrese nombre del vendedor: ");
-				String apellido = JOptionPane.showInputDialog("Ingrese apellido del vendedor: ");
-				String dni = JOptionPane.showInputDialog("Ingrese dni del vendedor: ");
-				String mail = JOptionPane.showInputDialog("Ingrese mail del vendedor: ");
-				double sueldoBase = Double
-						.parseDouble(JOptionPane.showInputDialog("Ingrese sueldo base del vendedor: "));
-				double totalVentas = Double
-						.parseDouble(JOptionPane.showInputDialog("Ingrese total de ventas del vendedor: "));
-				double porcenComision = Double
-						.parseDouble(JOptionPane.showInputDialog("Ingrese porcentaje de comision del vendedor: "));
-				v.cargaVendedor(sueldoBase, nombre, apellido, dni, mail, totalVentas, porcenComision);
+				v.setNombre(JOptionPane.showInputDialog("Ingrese nombre del vendedor: "));
+				v.setApellido(JOptionPane.showInputDialog("Ingrese apellido del vendedor: "));
+				v.setDni(JOptionPane.showInputDialog("Ingrese dni del vendedor: "));
+				v.setMail(JOptionPane.showInputDialog("Ingrese mail del vendedor: "));
+				v.setSueldo(Double.parseDouble(JOptionPane.showInputDialog("Ingrese sueldo base del vendedor: ")));
+				v.setTotalVentas(Double.parseDouble(JOptionPane.showInputDialog("Ingrese total de ventas del vendedor: ")));
+				v.setPorcenComision(Double.parseDouble(JOptionPane.showInputDialog("Ingrese porcentaje de comision del vendedor: ")));
+				
 				empleados.add(v);
 			}
+			
+			// VOLVER A PONER 20 EMPLEADOS POR DEFECTO. 5 Empleados era para testear.
 			String yesNo = JOptionPane.showInputDialog("Desea cargar otro empleado? (Y/N):  ");
 			if (yesNo.equalsIgnoreCase("N") || i == 4) {
 				if (i != 4)
